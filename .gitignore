@@ -1,0 +1,313 @@
+###############################################################################
+# .gitignore - Professional Git Ignore Configuration
+# Project: Onehux Digital Services (ODS)
+###############################################################################
+
+###############################################################################
+# IMPORTANT SYNTAX NOTES:
+# /folder_name/*  - Targets folder_name directory at the ROOT level only
+# folder_name/*   - Targets any folder_name directory ANYWHERE in the project
+###############################################################################
+
+
+###############################################################################
+# PYTHON
+###############################################################################
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+*.manifest
+*.spec
+MANIFEST
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# PEP 582
+__pypackages__/
+
+
+###############################################################################
+# VIRTUAL ENVIRONMENTS
+###############################################################################
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+
+###############################################################################
+# ENVIRONMENT VARIABLES
+###############################################################################
+.env
+.env.local
+.env.development
+.env.dev
+.env.production
+.env.prod
+.env.staging
+
+# Keep the template safe to commit
+# !.env.example
+
+
+###############################################################################
+# DJANGO
+###############################################################################
+*.log
+*.pot
+*.pyc
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+
+###############################################################################
+# DATABASE FILES
+###############################################################################
+*.db
+*.sqlite3
+*.dump
+*.sql
+
+
+###############################################################################
+# STATIC & MEDIA FILES (Root Level Only)
+###############################################################################
+/media/
+/static/
+/staticfiles/
+
+
+###############################################################################
+# GEOLOCATION DATABASES
+###############################################################################
+geoip/
+geoip2/
+GeoLite2-*.mmdb
+
+
+###############################################################################
+# NODE.JS / TAILWIND CSS
+###############################################################################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Tailwind CSS compiled output
+website/website/static/css/output.css
+website/website/static/css/tailwind.css
+*.css.map
+
+
+###############################################################################
+# CELERY & REDIS
+###############################################################################
+celerybeat-schedule
+celerybeat-schedule.db
+celerybeat-schedule.*
+celerybeat.pid
+*.pid
+dump.rdb
+
+
+###############################################################################
+# SECURITY & CRYPTOGRAPHIC KEYS
+###############################################################################
+secret_keys/
+jwt_keys/
+bin/
+*.pem
+*.key
+*.crt
+*.csr
+private.pem
+public.pem
+
+
+###############################################################################
+# TESTING & COVERAGE
+###############################################################################
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+
+###############################################################################
+# JUPYTER NOTEBOOK
+###############################################################################
+.ipynb_checkpoints
+
+
+###############################################################################
+# PYTHON DEVELOPMENT TOOLS
+###############################################################################
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# SageMath
+*.sage.py
+
+
+###############################################################################
+# IDE - VISUAL STUDIO CODE
+###############################################################################
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
+
+
+###############################################################################
+# IDE - PYCHARM / INTELLIJ IDEA
+###############################################################################
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+.idea/**/aws.xml
+.idea/**/contentModel.xml
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+.idea/**/gradle.xml
+.idea/**/libraries
+*.iws
+out/
+atlassian-ide-plugin.xml
+
+
+###############################################################################
+# IDE - SUBLIME TEXT
+###############################################################################
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+sftp-config.json
+Control.last-run
+Control.ca-list
+Control.ca-bundle
+Control.system-ca-bundle
+GitHub.sublime-settings
+
+
+###############################################################################
+# IDE - GENERAL
+###############################################################################
+*.swp
+*.swo
+*~
+
+
+###############################################################################
+# OPERATING SYSTEM FILES
+###############################################################################
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+ehthumbs.db
+Thumbs.db
+
+
+###############################################################################
+# DOCUMENTATION
+###############################################################################
+/site
+docs/_build/
+
+
+###############################################################################
+# LOG FILES
+###############################################################################
+logs/
+pip-log.txt
+pip-delete-this-directory.txt
+
+
+###############################################################################
+# BACKUP & TEMPORARY FILES
+###############################################################################
+*.backup
+*.bak
+*.tmp
+*.temp
+local/
+tmp/
+
+
+###############################################################################
+# TRANSLATIONS
+###############################################################################
+*.mo
+
+
+###############################################################################
+# PROJECT-SPECIFIC FILES
+###############################################################################
+isaac_struture.txt
+ai.txt
+
+
+###############################################################################
+# MIGRATION FILES (Uncomment to ignore - NOT RECOMMENDED)
+###############################################################################
+# WARNING: Migration files should typically be committed to version control!
+# Uncomment only if you have a specific reason to ignore them
+# website/*/migrations/
+

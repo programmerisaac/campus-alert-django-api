@@ -1,0 +1,15 @@
+{
+  "accuracy": 0.8511,
+  "false_alarm_rate": 0.266,
+  "n_train": 63716,
+  "n_test": 7159,
+  "n_features": 10000,
+  "label_encoding": {
+    "0": "low",
+    "1": "medium",
+    "2": "high",
+    "3": "critical"
+  },
+  "prd_targets_met": false,
+  "dataset_source": "ml/data/crisis_dataset.csv"
+}
