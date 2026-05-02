@@ -22,6 +22,7 @@ from rest_framework import filters, generics, status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.pagination import PageNumberPagination
 
 from .models import Alert, DeliveryLog
 from .permissions import IsVerifiedAdminRole, IsVerifiedUser
@@ -98,6 +99,16 @@ class AlertComposeView(APIView):
         )
 
 
+class AlertPagePagination(PageNumberPagination):
+    """
+    Standard page-number pagination for the alert feed.
+    Returns { count, next, previous, results } shape the mobile app expects.
+    """
+    page_size = 20
+    page_size_query_param = 'page_size'
+    max_page_size = 100
+
+
 class AlertFeedView(generics.ListAPIView):
     """
     GET /api/v1/alerts/
@@ -115,6 +126,7 @@ class AlertFeedView(generics.ListAPIView):
 
     serializer_class = AlertListSerializer
     permission_classes = [IsAuthenticated, IsVerifiedUser]
+    pagination_class = AlertPagePagination
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
     search_fields = ['title', 'body']
     ordering_fields = ['created_at', 'urgency']
@@ -141,6 +153,8 @@ class AlertFeedView(generics.ListAPIView):
             qs = qs.filter(category=category)
 
         return qs
+
+
 
 
 class AlertDetailView(generics.RetrieveAPIView):
@@ -263,6 +277,7 @@ class AdminAlertListView(generics.ListAPIView):
 
     serializer_class = AlertDetailSerializer
     permission_classes = [IsAuthenticated, IsVerifiedAdminRole]
+    pagination_class = AlertPagePagination
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
     search_fields = ['title', 'body']
     ordering_fields = ['created_at', 'urgency', 'status']
@@ -302,5 +317,11 @@ class AlertDeliveryStatusView(generics.RetrieveAPIView):
             qs = qs.filter(created_by=self.request.user)
         return qs
     
+
+
+
+
+
+
 
 
